@@ -24,14 +24,16 @@ jobs:
       - name: Checkout public binary-only release repository
         uses: actions/checkout@v4
 
-      - name: Install Android SDK build tools
-        uses: android-actions/setup-android@v3
-
       - name: Ensure APK signing/manifest validation tools
         shell: bash
         run: |
           set -euo pipefail
+          # GitHub ubuntu-latest already includes Android SDK command-line tools.
+          # Avoid setup-android action: on this runner it invokes the obsolete
+          # sdkmanager "tools" package and fails before validation starts.
+          test -d "${ANDROID_HOME:-/usr/local/lib/android/sdk}/cmdline-tools"
           sdkmanager --install "build-tools;35.0.0"
+          echo "${ANDROID_HOME:-/usr/local/lib/android/sdk}/build-tools/35.0.0" >> "$GITHUB_PATH"
 
       - name: Verify exact signed APK and publish matching release
         env:
