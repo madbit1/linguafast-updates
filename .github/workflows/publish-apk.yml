@@ -1,0 +1,68 @@
+name: Publish verified signed LinguaFast APK
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-apk.yml'
+      - 'release-input/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout public binary-only repository
+        uses: actions/checkout@v4
+      - name: Verify release data available
+        id: input
+        run: |
+          if test -f release-input/android-v13.complete; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No completed signed installer payload; no release can be published."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Reassemble and validate signed APK
+        if: steps.input.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/linguafast-release
+          cat release-input/android-v13.part*.b64 | base64 --decode > /tmp/linguafast-release/LinguaFast_v13_Update.apk
+          cd /tmp/linguafast-release
+          echo "5b6ca8589ed200a051c5a0982fde61bda4012f3ebca6b3e7f3d9ad179ad5d58f  LinguaFast_v13_Update.apk" | sha256sum -c -
+          unzip -t LinguaFast_v13_Update.apk | tail -1
+          python3 - <<'PY'
+          import zipfile
+          with zipfile.ZipFile("LinguaFast_v13_Update.apk") as z:
+              assert "AndroidManifest.xml" in z.namelist()
+              assert "classes.dex" in z.namelist()
+              assert "assets/index.html" in z.namelist()
+              content=z.read("assets/index.html")
+              assert b"INSTALLED_BUILD_CODE=13" in content
+              assert b"api.github.com/repos/madbit1/linguafast-updates/releases/latest" in content
+          print("Verified v13 signed installer archive and expected updater.")
+          PY
+          echo "5b6ca8589ed200a051c5a0982fde61bda4012f3ebca6b3e7f3d9ad179ad5d58f  LinguaFast_v13_Update.apk" > LinguaFast_v13_Update.apk.sha256
+      - name: Publish GitHub Release
+        if: steps.input.outputs.ready == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view android-v13 >/dev/null 2>&1; then
+            echo "Release android-v13 already exists; refusing to overwrite." >&2
+            exit 1
+          fi
+          gh release create android-v13 \
+            /tmp/linguafast-release/LinguaFast_v13_Update.apk \
+            /tmp/linguafast-release/LinguaFast_v13_Update.apk.sha256 \
+            --title "LinguaFast Android 1.13.0 (build 13)" \
+            --notes "Signed Android in-place update for versionCode 12. Package com.linguafast.translatox. No source code or signing keys in this repository. Android installation approval required." \
+            --latest
+          gh release view android-v13 --json tagName,assets --jq '{tag:.tagName,assets:[.assets[].name]}'
