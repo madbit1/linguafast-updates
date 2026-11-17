@@ -31,9 +31,11 @@ jobs:
           # GitHub ubuntu-latest already includes Android SDK command-line tools.
           # Avoid setup-android action: on this runner it invokes the obsolete
           # sdkmanager "tools" package and fails before validation starts.
-          test -d "${ANDROID_HOME:-/usr/local/lib/android/sdk}/cmdline-tools"
-          sdkmanager --install "build-tools;35.0.0"
-          echo "${ANDROID_HOME:-/usr/local/lib/android/sdk}/build-tools/35.0.0" >> "$GITHUB_PATH"
+          SDK_HOME="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          SDKMANAGER="$(find "$SDK_HOME/cmdline-tools" -type f -name sdkmanager | sort -V | tail -1)"
+          test -n "$SDKMANAGER"
+          "$SDKMANAGER" --install "build-tools;35.0.0"
+          echo "$SDK_HOME/build-tools/35.0.0" >> "$GITHUB_PATH"
 
       - name: Verify exact signed APK and publish matching release
         env:
