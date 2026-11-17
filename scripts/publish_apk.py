@@ -153,7 +153,7 @@ def publish(apk_override=None, validate_only=False):
                          encoding="utf-8")
         run(["gh", "release", "create", tag, str(apk), str(checksum), "-R", repo,
              "--title", f"{config['app_name']} {name} (build {code})",
-             "--notes-file", str(notes), "--latest", "--verify-tag"])
+             "--notes-file", str(notes), "--latest"])
         # Verify the specific release exists and contains the named signed APK.
         released = json.loads(run(["gh", "release", "view", tag, "-R", repo, "--json", "tagName,assets"]))
         if released.get("tagName") != tag or filename not in [x["name"] for x in released["assets"]]:
