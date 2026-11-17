@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "build_code": 13,
+  "version_name": "1.13.0",
+  "sha256": "5b6ca8589ed200a051c5a0982fde61bda4012f3ebca6b3e7f3d9ad179ad5d58f",
+  "parts": [
+    "release-input/payload/part0000.b64"
+  ],
+  "release_notes": "LinguaFast v1.13.0, build 13. Signed in-place update for v12. Improvements: automatic update-check retry after unsuccessful checks and clearer status. Translation, history, microphone, auto-detect and conversation features remain unchanged. Android Package Installer approval is required."
+}
