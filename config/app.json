@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "app_name": "LinguaFast",
+  "asset_prefix": "LinguaFast",
+  "application_id": "com.linguafast.translatox",
+  "signing_certificate_sha256": "a41fd999b6f63545ff07c11be4f02166e32a0b693b128b8de3417b690f8fc869",
+  "release_repo": "madbit1/linguafast-updates"
+}
