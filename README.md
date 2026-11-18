@@ -2,15 +2,19 @@
 
 This repository contains **only distribution metadata and signed Android APK files**. The application **source code remains private** in `madbit1/chat-translator`. Do not commit keystores, signing keys, secrets, API tokens, private source, app data or user histories here.
 
-## Current live Android release
+## Current live Android release — 18 November 2026
 
-- **Latest published release:** [LinguaFast Android v13](https://github.com/madbit1/linguafast-updates/releases/latest)
-- **In-app update feed:** `https://api.github.com/repos/madbit1/linguafast-updates/releases/latest`
-- **Downloadable APK:** `LinguaFast_v13_Update.apk` — signed APK for **`com.linguafast.translatox`**, build **13**, version **1.13.0**.
-- **APK SHA-256:** `5b6ca8589ed200a051c5a0982fde61bda4012f3ebca6b3e7f3d9ad179ad5d58f`
-- **Signing certificate SHA-256:** `a41fd999b6f63545ff07c11be4f02166e32a0b693b128b8de3417b690f8fc869`
-- **17 November 2026:** GitHub Actions run [44075803801](https://github.com/madbit1/linguafast-updates/actions/runs/44075803801) successfully verified signature, package version, APK digest, uploaded release asset, and anonymously accessible latest-release API.
-- **Actual Android phone upgrade:** not yet user-tested. A live GitHub release does not silently install itself.
+- **Current signed release:** [LinguaFast Android v16 (1.16.0 / build 16)](https://github.com/madbit1/linguafast-updates/releases/tag/android-v16).
+- **In-app update feed (public):** `https://api.github.com/repos/madbit1/linguafast-updates/releases/latest`.
+- **APK download:** [`LinguaFast_v16_Update.apk`](https://github.com/madbit1/linguafast-updates/releases/download/android-v16/LinguaFast_v16_Update.apk), signed for `com.linguafast.translatox`.
+- **APK SHA-256:** `ef92fcaf76e0a13d6951a974b44a5ca07869f726251f669a743a6e79dc3e9b8d`. A matching `.sha256` asset is included in the v16 release.
+- **Signing certificate SHA-256:** `a41fd999b6f63545ff07c11be4f02166e32a0b693b128b8de3417b690f8fc869`. Preserve this identity for updates.
+- **Publishing evidence:** on 18 Nov 2026 the owner built the signed v16 APK locally in Termux using the existing ARM64 toolchain and original keystore, uploaded it via the GitHub CLI and downloaded it back to verify SHA-256. The owner subsequently reported the app working perfectly. Do not infer a tested v16→v17 updater transition from that report.
+- **Production safety:** this v16 release is the protected recovery baseline. Do not replace or overwrite its published tag/asset. Next releases must have a strictly larger build code.
+- **Build origin:** the private source repo owns the exact preserved `android/tools/build_publish_v16_termux.sh` and a new version-independent `android/tools/build_publish_termux.sh` for later sideload builds. GitHub Actions publication is a historic/alternate path, not the Termux route used for v16. The generic script has not yet been verified on a new release.
+- **Google Play is separate:** this v16 APK is a *sideload* binary (target API35, GitHub APK updater). It is **not** a Google Play upload. Play requires an API36+ AAB and Play-managed updates, rather than GitHub APK self-installation.
+
+**Emergency install:** if the installed app can be updated by this version, download the signed APK, verify its checksum and use Android's normal user-approved installer without uninstalling. Android generally refuses downgrades: for a broken installed build 17, restore known-good source logic and distribute a **newer** compatible signed build 18+ instead of attempting to install build 16 over 17.
 
 ## Permanent rule — future builds are NOT hard-coded in the workflow
 
