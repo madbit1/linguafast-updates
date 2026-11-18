@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "build_code": 13,
-  "version_name": "1.13.0",
-  "sha256": "5b6ca8589ed200a051c5a0982fde61bda4012f3ebca6b3e7f3d9ad179ad5d58f",
+  "build_code": 14,
+  "version_name": "1.14.0",
+  "sha256": "965e1b403c9a15c895b80ee26607e282144b3ed04be3f0e63433fb60ecbe48a2",
   "parts": [
-    "release-input/payload/part0000.b64"
+    "release-input/payload/part0001.b64"
   ],
-  "release_notes": "LinguaFast v1.13.0, build 13. Signed in-place update for v12. Improvements: automatic update-check retry after unsuccessful checks and clearer status. Translation, history, microphone, auto-detect and conversation features remain unchanged. Android Package Installer approval is required."
+  "release_notes": "LinguaFast v1.14.0 (build 14). In-place signed update from v13 with the same Android package ID and signing certificate.\n\nChanges: larger original-text entry area; clearer Mic, Listen, Paste and Clear controls below the editor; clears source text on language/direction switch with Restore Previous; saves unfinished drafts and existing history/preferences locally; clearer free translation service error messages; GitHub release notes visible in the update screen.\n\nNotes: the v14 APK reuses v13's native compiled bridge. Clipboard Paste can require using the Android keyboard's Paste command, and the updater download may hand off to the system browser/downloads rather than staying inside LinguaFast. The updated native in-app downloader source is not yet included in this APK. Android's system installer must approve installation. Normal signed upgrades preserve existing app storage."
 }
