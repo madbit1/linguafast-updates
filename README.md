@@ -1,46 +1,43 @@
-# LinguaFast — public, signed APK update channel
+# LinguaFast — public signed Android APK releases
 
-This repository contains **only distribution metadata and signed Android APK files**. The application **source code remains private** in `madbit1/chat-translator`. Do not commit keystores, signing keys, secrets, API tokens, private source, app data or user histories here.
+**Developer credit:** Stylish Future Technologies. This is the **public, binary-only distribution repository** for LinguaFast. Application source remains in the separate **private** repository `madbit1/chat-translator`. Never upload source, signing keys, passwords, tokens, microphone recordings, local history or user data here.
 
-## Current live Android release — 18 November 2026
+## Releases and current status — 19 November 2026
 
-- **Current signed release:** [LinguaFast Android v16 (1.16.0 / build 16)](https://github.com/madbit1/linguafast-updates/releases/tag/android-v16).
-- **In-app update feed (public):** `https://api.github.com/repos/madbit1/linguafast-updates/releases/latest`.
-- **APK download:** [`LinguaFast_v16_Update.apk`](https://github.com/madbit1/linguafast-updates/releases/download/android-v16/LinguaFast_v16_Update.apk), signed for `com.linguafast.translatox`.
-- **APK SHA-256:** `ef92fcaf76e0a13d6951a974b44a5ca07869f726251f669a743a6e79dc3e9b8d`. A matching `.sha256` asset is included in the v16 release.
-- **Signing certificate SHA-256:** `a41fd999b6f63545ff07c11be4f02166e32a0b693b128b8de3417b690f8fc869`. Preserve this identity for updates.
-- **Publishing evidence:** on 18 Nov 2026 the owner built the signed v16 APK locally in Termux using the existing ARM64 toolchain and original keystore, uploaded it via the GitHub CLI and downloaded it back to verify SHA-256. The owner subsequently reported the app working perfectly. Do not infer a tested v16→v17 updater transition from that report.
-- **Production safety:** this v16 release is the protected recovery baseline. Do not replace or overwrite its published tag/asset. Next releases must have a strictly larger build code.
-- **Build origin:** the private source repo owns the exact preserved `android/tools/build_publish_v16_termux.sh` and a new version-independent `android/tools/build_publish_termux.sh` for later sideload builds. GitHub Actions publication is a historic/alternate path, not the Termux route used for v16. The generic script has not yet been verified on a new release.
-- **Google Play is separate:** this v16 APK is a *sideload* binary (target API35, GitHub APK updater). It is **not** a Google Play upload. Play requires an API36+ AAB and Play-managed updates, rather than GitHub APK self-installation.
+- **Latest owner-confirmed published release:** [LinguaFast v1.19.0 / Android build 19](https://github.com/madbit1/linguafast-updates/releases/tag/android-v19), asset `LinguaFast_v19_Update.apk`, SHA-256 `2f89b5290dfcf12e7d6f8e39ae6083debe848466e8a0d0639c3dc4ecd6d8222b`. Always check [the live Releases page](https://github.com/madbit1/linguafast-updates/releases/latest) rather than relying solely on this dated checkpoint.
+- **v20 (1.20.0 / build 20):** on 19 November 2026 the owner successfully compiled and signed v20 in Termux and passed all source checks; local verified SHA-256 `e9d3ecc85d4903e12e5f7ad21de36c94e8ab683ae565aa4d6abf308ba63e0318`. **The v20 APK was NOT uploaded or publicly released by that build.** Do not advertise v20 as installable from GitHub until a new `android-v20` Release and its signed binary are independently verified.
+- **Public update metadata feed:** `https://api.github.com/repos/madbit1/linguafast-updates/releases/latest`. The installed app's **About → Check now** reads this feed; the Android OS must approve installation.
+- **Trusted package:** `com.linguafast.translatox`. **Production signing certificate SHA-256:** `a41fd999b6f63545ff07c11be4f02166e32a0b693b128b8de3417b690f8fc869`. Preserve both for in-place data-preserving updates.
+- **Security:** an earlier attempted update showed Google Play Protect **“Harmful app blocked”** and Samsung Auto Blocker warnings; the classification is unresolved. Do not override device protections to install a flagged binary. See [Security and release readiness](SECURITY.md). **Neither signature verification nor GitHub publication means Google has cleared the app for general distribution.**
 
-**Emergency install:** if the installed app can be updated by this version, download the signed APK, verify its checksum and use Android's normal user-approved installer without uninstalling. Android generally refuses downgrades: for a broken installed build 17, restore known-good source logic and distribute a **newer** compatible signed build 18+ instead of attempting to install build 16 over 17.
+## What LinguaFast does
 
-## Permanent rule — future builds are NOT hard-coded in the workflow
+Translate text and speak translations, including a three-speaker A/B/C conversation. The v19 release included phrases, playback controls and AI privacy choices; the **unpublished v20 source** improves microphone pause handling, provider-dependent spoken-language Auto identification, A-to-Guest-C routing, conversation scrolling and individual message Delete.
 
-The [publisher](scripts/publish_apk.py) and [release workflow](.github/workflows/publish-apk.yml) are **version-independent**. **No version-number edits to scripts or workflow are needed for v14, v15 or later.** Each release is driven by:
+Speech recognition quality and automatic spoken language switching depend on installed Android language services. Short words may be misheard; a manually selected source language remains the reliable fallback.
 
-1. **Stable app identity:** [`config/app.json`](config/app.json) defines package ID, certificate fingerprint, app name, and release repository. Those are **intentionally fixed security identifiers**, and should not change for routine version updates. A different Android app should have its own configuration and public binary-only release repo.
-2. **New build metadata:** [`release-input/manifest.json`](release-input/manifest.json) states `build_code`, `version_name`, SHA-256, non-sensitive release notes, and ordered base64 payload part filenames.
-3. **Signed package bytes:** the **already signed APK**, encoded as ordered base64 text chunks under `release-input/payload/` for this bootstrap transport. Every new build replaces the payload parts. No signing key is uploaded here.
-4. **Publish signal:** update [`release-input/ready.json`](release-input/ready.json) **last**, with the matching `build_code` and checksum. That specific change triggers GitHub Actions. The workflow refuses a mismatch.
-5. **Validation and publishing:** the workflow reassembles the APK, checks SHA-256, Android ZIP/manifest, embedded app version, v2/v3 signing identity, package ID, trusted update endpoint, and whether the build is newer than the last release. Only then does it publish `android-v<build_code>` and `LinguaFast_v<build_code>_Update.apk`.
-6. **Verification:** the workflow checks its newly published Release and its public `releases/latest` feed. A user can then open **LinguaFast → About → Check Now** to see the new version and use Android's Package Installer to approve the update.
+## Privacy and data protection
 
-**Important:** For larger APKs, use a secure CI-built signed APK or locally generated payload chunks rather than attempting to commit a multi-megabyte base64 string in one GitHub file. The release script also supports `--apk /path/to/signed.apk` for an authorized build runner and `--validate-only` to test without publishing. Never distribute an installer before a signed asset is actually visible in the update feed.
+Read the [public Privacy and data use policy](PRIVACY_POLICY.md) before entering private text or enabling voice/AI. Translation sends text to online providers. Android speech services **may** process audio remotely; optional AI providers receive selected text and your API key. History, saved phrases, drafts and settings normally remain in private local app storage; the app offers retention/deletion and manual JSON backup. The default history/conversation retention is 365 days, adjustable in-app. Backups copied to the clipboard are not encrypted. Local deletion does not erase external service copies.
 
-## How app owners test the updater
+**Production-readiness limitation:** a verified developer privacy/security contact, formal service-provider and rights-process assessment and Play Protect resolution remain outstanding. Do not describe the existing sideload channel as Google Play-approved or as having finished a formal privacy compliance review.
 
-When v12 is installed:
+## Release publication contract
 
-1. Open **About** or the version label.
-2. Tap **Check Now**. It should show **v1.13.0 (build 13)** and **Get APK update**.
-3. Tap **Get APK update**; Android should open the trusted release download in the browser.
-4. Open the completed APK download from the Android notification or **Samsung My Files → Downloads** and approve **Package Installer → Update**.
-5. Launch LinguaFast, confirm **v1.13.0 / build 13**, and verify that translations, history, and settings survived.
+**A successful Gradle build is only a candidate.** Before announcing a new version, the complete sequence is: reviewed private source and tests → incremented Android build → original-key signed APK → certificate/package/version/hash verification → approved public release → signed APK + checksum + non-sensitive release notes uploaded to GitHub → download-back SHA-256 verification → public `releases/latest` verification → device update/retained-data test.
 
-If Android does not launch the installer automatically, that's expected on unmanaged devices. If the update check fails or the download control does nothing, capture the exact screen/error for a targeted phone fix; don't replace the APK's package ID or signing key to work around it.
+**Owner's normal publisher:** `bash android/tools/build_publish_termux.sh` in the existing private Termux checkout performs the build, signed validation, GitHub publication and public-feed verification as one process. `--build-only` is intentionally **not** a public release. An already built and verified APK can be published **without rebuilding** using `bash android/tools/publish_signed_apk_termux.sh` **once release/security approval is complete**. Never upload binary bytes directly to the private source repository. The original signing key stays on the owner's device.
 
-## Security policy
+Existing releases are immutable recovery baselines: always increment `versionCode`; never overwrite a published tag, rename the app package or rotate the signature casually. Public releases should include the descriptive source-maintained notes and matching `.sha256` file.
 
-The public updater carries only signed binaries and public release metadata. The *private source* project is not made public. No secrets are included. Never overwrite an existing released build: publish the next strictly increasing Android `versionCode`. Do not remove the verified signing certificate or change the installed package ID. Source commits alone are not releases.
+The historical `scripts/publish_apk.py` and `.github/workflows/publish-apk.yml` are preserved alternate/baseline infrastructure, **not** evidence that an APK built in Termux automatically uploads when `--build-only` was selected. The in-use Termux GitHub CLI publisher is the authoritative local signing/publication path.
+
+## Installing and updating
+
+When a newer compatible, security-cleared release is actually available, an existing user can open LinguaFast, tap **About → Check now → Update now**, and follow the Android Package Installer's approval. A routine in-place update should preserve local history/settings; uninstalling or clearing app data may destroy them. Users should not be asked to use Termux, sign APKs, enter developer passwords or browse a source repository.
+
+If Android or Google blocks an installation as harmful, **stop and follow official guidance** rather than disabling protections. Samsung's current real-device update behavior and data preservation must be verified per release; no promise of silent installation is made.
+
+## For maintainers
+
+Keep developer/release artifacts in the private repo; only approved public signed APKs, SHA-256 checksums, release metadata and reviewed non-sensitive documentation go here. The public [Privacy Policy](PRIVACY_POLICY.md) and [Security Policy](SECURITY.md) must be updated when the actual app's data flows, protections or known risks change. See the private project's `AGENTS.md`, `RELEASE_SYNC_POLICY.md`, `PROJECT_STATUS.md` and `DATA_PROTECTION_AND_RELEASE_READINESS.md` for engineering checklists.
