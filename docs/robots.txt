@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://madbit1.github.io/linguafast-updates/sitemap.xml
