@@ -1,5 +1,13 @@
 # LinguaFast — public signed Android APK releases
 
+## Official LinguaFast website — free GitHub Pages
+
+The public product website source is in [`docs/`](docs/), separate from the private app source and from signed APK release assets. Its planned HTTPS address is **https://madbit1.github.io/linguafast-updates/**, with a dedicated [privacy page](docs/privacy.html) and [support/data deletion page](docs/support.html). It shows the current v23 Android capabilities, explicitly labelled illustrative previews, and a read-only public GitHub release lookup.
+
+**Site source has been committed and validated; Pages publishing must be switched on once.** From the already authenticated Termux `gh` CLI: `gh api -X POST repos/madbit1/linguafast-updates/pages -f 'source[branch]=main' -f 'source[path]=/docs'`. Alternatively use [repository Settings → Pages](https://github.com/madbit1/linguafast-updates/settings/pages), Source “Deploy from a branch”, Branch `main`, Folder `/docs`. The site should only be called live after verifying its HTTPS URL. No Vercel or another hosting account is used. Actual Android screenshots and a verified private support/contact address are still pending for Play Store review.
+
+
+
 **Developer credit:** Stylish Future Technologies. This is the **public, binary-only distribution repository** for LinguaFast. Application source remains in the separate **private** repository `madbit1/chat-translator`. Never upload source, signing keys, passwords, tokens, microphone recordings, local history or user data here.
 
 ## Releases and current status — 19 November 2026
