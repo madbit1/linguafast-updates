@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d9488">
+<meta name="description" content="LinguaFast for Android privacy policy: how text, speech, translations, AI keys, local records and app updates are handled.">
+<title>Privacy policy · LinguaFast</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+<link rel="canonical" href="https://madbit1.github.io/linguafast-updates/privacy.html">
+</head><body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="site-head"><div class="container head-inner"><a class="identity" href="./"><img src="favicon.svg" width="42" height="42" alt="">LinguaFast</a><nav class="site-nav" aria-label="Navigation"><a href="./">Home</a><a href="support.html">Support</a><a href="https://github.com/madbit1/linguafast-updates/releases/latest" class="nav-cta">Releases</a></nav></div></header>
+<main id="main"><section class="page-hero"><div class="container"><div class="eyebrow">Privacy &amp; data</div><h1>Privacy policy</h1><p>What LinguaFast uses, what stays on the device, and where requests go.</p></div></section>
+<article class="prose container">
+<p><strong>Product:</strong> LinguaFast for Android, application ID <code>com.linguafast.translatox</code><br><strong>Developer credit:</strong> Stylish Future Technologies<br><strong>Last reviewed:</strong> 19 November 2026<br><strong>Release basis:</strong> publicly published LinguaFast v1.23.0 (build 23)</p>
+<p class="note">LinguaFast is a translation application. The current application uses online translation services and optional third-party AI providers. Please avoid sending confidential material that you do not want a provider to process. We do not claim that third-party services erase or keep your requests for any particular length of time.</p>
+<h2 id="collected">1. Information used</h2>
+<p>LinguaFast processes typed messages, chosen language settings, voice-to-text transcripts, translation results, optional AI Polish requests, application preferences and any conversation records you choose to keep. If you enable speech input, the app requests Android microphone permission when you activate that feature.</p>
+<p>The app's own speech flow uses the recognition service installed on your device. Depending on the Android service and its configuration, that provider may process spoken audio locally or remotely; LinguaFast does not guarantee offline speech recognition.</p>
+<h2 id="services">2. Information sent to other services</h2>
+<ul>
+<li><strong>Instant translation:</strong> source text and chosen languages are sent over the internet to a translation service. The current app uses a Google translation endpoint with a MyMemory fallback.</li>
+<li><strong>Optional AI:</strong> enabling AI translation or AI Polish sends selected message text and the selected API key as authentication to your configured provider, such as Google Gemini, Groq, OpenRouter, OpenAI, DeepSeek or a custom provider. Long messages may be split into multiple requests. Providers have their own billing, policy, retention and data-use practices.</li>
+<li><strong>Speech recognition:</strong> the installed Android speech service may process audio and return text to LinguaFast. Recognized text is then used for translation as requested.</li>
+<li><strong>Updates:</strong> LinguaFast retrieves public release metadata and, with user approval, an APK from GitHub. GitHub and network operators may process connection metadata including IP addresses.</li>
+<li><strong>Manual sharing:</strong> if you copy, share or export your records, the selected clipboard or receiving app handles that data under its own controls.</li>
+</ul>
+<p>The original typed text is preserved if an AI proofreading request fails; a successful suggestion is not applied until the user confirms it. AI provider safety restrictions can prevent processing some requests.</p>
+<h2 id="stored">3. Information stored locally</h2>
+<p>Where local storage is available, LinguaFast keeps history, conversations, saved translations, reusable phrases and preferences on your device. The current limits reflected in the Android app are up to 200 translation-history entries, 200 conversation messages, 200 saved translations and 40 reusable phrases.</p>
+<p><strong>AI credentials:</strong> in the native Android app (v23 onwards), opted-in remembered API keys are stored per provider in app-private encrypted SharedPreferences protected by an Android Keystore AES-GCM key. When upgrading from v22, the app attempts to migrate the previously saved key only after encryption succeeds. If encryption fails, legacy data may be retained to avoid losing that key. The separate browser edition, where used, relies on optional browser localStorage and does not provide Android Keystore protection.</p>
+<p>Selected AI keys are sent to their relevant providers to authorise requests. Keys are not intentionally included in a conversation-history export or stored on the public GitHub release repository. Your device does not sync stored keys across phones.</p>
+<h2 id="retention">4. Retention, deletion and backups</h2>
+<p>The default history and conversation retention period is <strong>365 days</strong>; you can select 30 days, 90 days, 365 days or retention until deletion, subject to the record limits. Saved phrases and favourites remain until you delete them or the app's storage rules apply.</p>
+<p>Use <strong>Privacy and data → Clear local data</strong> to remove app records and saved provider credentials. Individual messages and records can also be deleted using their controls. Deleting the app or clearing Android app storage may permanently erase local history because the app does not provide automatic cloud recovery.</p>
+<p>Manual JSON backups and copied translation history are unencrypted once placed on your clipboard or in another app. The app's backup excludes AI API keys. You are responsible for storing exported files safely.</p>
+<p>Deleting local data does not remove copies already processed or stored by Google, MyMemory, an AI provider, a speech provider, or another destination you chose. Contact those providers about their retention and deletion processes.</p>
+<h2 id="permissions">5. Android permissions</h2>
+<ul>
+<li><strong>Internet:</strong> required for online translation, optional AI requests and update checks.</li>
+<li><strong>Microphone:</strong> used only for speech input when you choose to activate it, subject to Android permission controls.</li>
+<li><strong>Request install packages:</strong> used for the separate GitHub sideload update channel. Android requires your approval before an APK is installed. The Play-distributed build may use a different update mechanism.</li>
+</ul>
+<h2 id="website">6. This website</h2>
+<p>This public informational site is hosted with GitHub Pages and does not provide sign-in, API key entry, or analytics scripts. Its homepage may query GitHub's public release API to show the latest app version. GitHub may log standard access and security information such as IP addresses under GitHub's own policies. When you follow an external link, the destination site operates independently.</p>
+<h2 id="contact">7. Privacy contact and corrections</h2>
+<p><strong>Developer attribution:</strong> Stylish Future Technologies. The product-specific <a href="support.html">support and contact page</a> currently provides a public GitHub issue route for non-sensitive questions. <strong>A verified private contact email and legal controller details are pending</strong> before Play Store submission. Do not put sensitive personal information, API keys or private transcripts into a public issue.</p>
+<p>Public provider and security information is also available in the <a href="https://github.com/madbit1/linguafast-updates/blob/main/PRIVACY_POLICY.md">source privacy notice</a> and <a href="https://github.com/madbit1/linguafast-updates/blob/main/SECURITY.md">security notice</a>. This policy will be updated when product data handling or support details change; publishing it does not itself establish independent legal compliance or Play Protect clearance.</p>
+<p><a href="./">← Back to LinguaFast</a></p>
+</article></main>
+<footer class="footer"><div class="container"><div class="footer-bottom">© 2026 LinguaFast · Developed by Stylish Future Technologies · <a href="./">Home</a> · <a href="support.html">Support</a> · <a href="https://github.com/madbit1/linguafast-updates/releases/latest">Releases</a></div></div></footer></body></html>
