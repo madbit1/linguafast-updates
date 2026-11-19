@@ -4,16 +4,16 @@
 
 ## Releases and current status — 19 November 2026
 
-- **Published:** [LinguaFast v1.20.0 / Android build 20](https://github.com/madbit1/linguafast-updates/releases/tag/android-v20), asset [`LinguaFast_v20_Update.apk`](https://github.com/madbit1/linguafast-updates/releases/download/android-v20/LinguaFast_v20_Update.apk). **SHA-256:** `e9d3ecc85d4903e12e5f7ad21de36c94e8ab683ae565aa4d6abf308ba63e0318`. The owner's Termux publishing log confirmed both APK/checksum uploads, public release and downloaded-APK SHA-256 match. This is a **sideload release**, not Google Play approval.
-- **Previous release:** [android-v19](https://github.com/madbit1/linguafast-updates/releases/tag/android-v19), checksum `2f89b5290dfcf12e7d6f8e39ae6083debe848466e8a0d0639c3dc4ecd6d8222b`. Existing public versions are retained as immutable baselines.
-- **Public update metadata feed:** `https://api.github.com/repos/madbit1/linguafast-updates/releases/latest`. The publisher reported publication of v20; independent app/device recognition and in-place upgrade still require testing.
-- **Trusted package:** `com.linguafast.translatox`. **Original signing certificate SHA-256:** `a41fd999b6f63545ff07c11be4f02166e32a0b693b128b8de3417b690f8fc869`. Preserve both for compatible in-place updates.
-- **Security caution:** a previous attempted installation showed Google Play Protect **“Harmful app blocked”** and Samsung Auto Blocker warnings; the cause is unresolved. **Do not override device protections** to install a flagged binary. See [Security](SECURITY.md). Publication and signature verification are not malware clearance.
+- **Latest published:** [LinguaFast v1.21.0 / Android build 21](https://github.com/madbit1/linguafast-updates/releases/tag/android-v21); [`LinguaFast_v21_Update.apk`](https://github.com/madbit1/linguafast-updates/releases/download/android-v21/LinguaFast_v21_Update.apk). **SHA-256:** `3e05073969d9f41218aa72ea0d34fdff54d382c6e9d4d0f9a53ceb14f9e34440`. The owner's Termux publisher reports `PUBLISHED` after both APK and checksum asset uploads and downloaded-APK SHA-256 verification. This is a signed GitHub **sideload release**, not Google Play certification.
+- **Previous release:** [android-v20](https://github.com/madbit1/linguafast-updates/releases/tag/android-v20), SHA-256 `e9d3ecc85d4903e12e5f7ad21de36c94e8ab683ae565aa4d6abf308ba63e0318`. Earlier signed APK releases remain untouched.
+- **Public update metadata endpoint:** `https://api.github.com/repos/madbit1/linguafast-updates/releases/latest`. The publication log is verified from the owner; a separate live endpoint response and actual Samsung in-app recognition/installation have not yet been reported.
+- **Trusted package:** `com.linguafast.translatox`. Original signing certificate SHA-256: `a41fd999b6f63545ff07c11be4f02166e32a0b693b128b8de3417b690f8fc869`. Maintain package and certificate continuity for in-place updates.
+- **Security remains open:** an earlier attempt produced Google Play Protect **“Harmful app blocked”** and Samsung Auto Blocker messages; the classification has **not** been resolved or established for v21 specifically. Do not override device protections to install a flagged APK. Read [Security](SECURITY.md). Successful download/hash/signature verification **does not** prove malware safety.
 
 
 ## What LinguaFast does
 
-Translate text and speak translations, including a three-speaker A/B/C conversation. The v19 release included phrases, playback controls and AI privacy choices; the **published v20 build** improves microphone pause handling, provider-dependent spoken-language Auto identification, A-to-Guest-C routing, conversation scrolling and individual message Delete.
+Translate text and speak translations, including a three-speaker A/B/C conversation. The v19 release included phrases, playback controls and AI privacy choices; **v20** improved microphone pause handling, provider-dependent spoken-language Auto identification, A-to-Guest-C routing, conversation scrolling and individual message Delete. **v21** adds verified APK checksum checking before Android installer handoff, improved AI processing for long messages, faithful profanity/slang translation and proofreading, and a request for unmasked Android speech transcription when the device supports it. AI providers may still reject content under their rules.
 
 Speech recognition quality and automatic spoken language switching depend on installed Android language services. Short words may be misheard; a manually selected source language remains the reliable fallback.
 
