@@ -4,11 +4,12 @@
 
 ## Releases and current status — 19 November 2026
 
-- **Latest owner-confirmed public GitHub release:** **[LinguaFast v1.20.0 / Android build 20](https://github.com/madbit1/linguafast-updates/releases/tag/android-v20)**. The owner’s Termux publisher reported the signed `LinguaFast_v20_Update.apk` and checksum assets uploaded, downloaded the GitHub APK back, and verified SHA-256 `e9d3ecc85d4903e12e5f7ad21de36c94e8ab683ae565aa4d6abf308ba63e0318`. Output explicitly reported `PUBLISHED`. **Installation on Samsung is not yet confirmed.**
-- **Previous release:** [v19](https://github.com/madbit1/linguafast-updates/releases/tag/android-v19), SHA-256 `2f89b5290dfcf12e7d6f8e39ae6083debe848466e8a0d0639c3dc4ecd6d8222b`. Prior signed tags and assets remain intact.
-- **Public update metadata endpoint:** `https://api.github.com/repos/madbit1/linguafast-updates/releases/latest`. The current release was verified by the owner’s upload/download-back output; a separate anonymous `releases/latest` fetch and in-app **About → Check now** behavior still need confirmation.
-- **Trusted package ID:** `com.linguafast.translatox`. **Production signing certificate SHA-256:** `a41fd999b6f63545ff07c11be4f02166e32a0b693b128b8de3417b690f8fc869`. The same package and signer are essential for preserving local data during in-place updates.
-- **Security and distribution warning:** a previous Samsung update attempt displayed Google Play Protect **“Harmful app blocked”**. The cause of that warning remains under investigation; v20's checksum verification **does not establish safety** or remove that warning. **Do not override Play Protect or Samsung Auto Blocker to install a flagged app.** See [Security](SECURITY.md) and [Privacy](PRIVACY_POLICY.md).
+- **Published:** [LinguaFast v1.20.0 / Android build 20](https://github.com/madbit1/linguafast-updates/releases/tag/android-v20), asset [`LinguaFast_v20_Update.apk`](https://github.com/madbit1/linguafast-updates/releases/download/android-v20/LinguaFast_v20_Update.apk). **SHA-256:** `e9d3ecc85d4903e12e5f7ad21de36c94e8ab683ae565aa4d6abf308ba63e0318`. The owner's Termux publishing log confirmed both APK/checksum uploads, public release and downloaded-APK SHA-256 match. This is a **sideload release**, not Google Play approval.
+- **Previous release:** [android-v19](https://github.com/madbit1/linguafast-updates/releases/tag/android-v19), checksum `2f89b5290dfcf12e7d6f8e39ae6083debe848466e8a0d0639c3dc4ecd6d8222b`. Existing public versions are retained as immutable baselines.
+- **Public update metadata feed:** `https://api.github.com/repos/madbit1/linguafast-updates/releases/latest`. The publisher reported publication of v20; independent app/device recognition and in-place upgrade still require testing.
+- **Trusted package:** `com.linguafast.translatox`. **Original signing certificate SHA-256:** `a41fd999b6f63545ff07c11be4f02166e32a0b693b128b8de3417b690f8fc869`. Preserve both for compatible in-place updates.
+- **Security caution:** a previous attempted installation showed Google Play Protect **“Harmful app blocked”** and Samsung Auto Blocker warnings; the cause is unresolved. **Do not override device protections** to install a flagged binary. See [Security](SECURITY.md). Publication and signature verification are not malware clearance.
+
 
 ## What LinguaFast does
 
