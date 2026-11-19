@@ -6,7 +6,7 @@
 
 A previous installation attempt on Samsung showed Google Play Protect **“Harmful app blocked”** and Samsung Auto Blocker **“Unknown app blocked.”** The exact Google classification reason and remediation are **not established**, so do not assume a false positive or say the app is security-cleared. No user should be instructed to disable Play Protect/Auto Blocker or choose an override to install a flagged APK.
 
-The last owner-verified **public** release is [android-v19](https://github.com/madbit1/linguafast-updates/releases/tag/android-v19); build 20 was locally signed and verified on 19 November 2026 but is **not a confirmed public release**. Always consult [GitHub Releases](https://github.com/madbit1/linguafast-updates/releases/latest) for the actual visible distribution status.
+The latest owner-confirmed **public release is [android-v20](https://github.com/madbit1/linguafast-updates/releases/tag/android-v20)**, signed APK `LinguaFast_v20_Update.apk`, SHA-256 `e9d3ecc85d4903e12e5f7ad21de36c94e8ab683ae565aa4d6abf308ba63e0318`. Owner's Termux output verifies GitHub upload, download-back SHA-256 match and published status. **The classification of the previous harmful-app warning, a separate unauthenticated `releases/latest` check and successful on-device v20 installation remain unverified.** No statement here certifies the APK as safe or recommends overriding security protections.
 
 ## Release integrity checks
 
