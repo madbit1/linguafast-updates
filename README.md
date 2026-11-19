@@ -1,5 +1,24 @@
 # LinguaFast — public signed Android APK releases
 
+
+## LinguaFast website and Google Play preparation
+
+The official LinguaFast information website is prepared in the public [`docs/`](docs/) folder: product homepage, responsive CSS and illustrations, current GitHub release metadata, [privacy policy](docs/privacy.html) and [support/help](docs/support.html). It uses LinguaFast's real Android feature set and v23 release; any on-page phone or conversation examples are identified as **illustrations, not authentic screenshots**. Real Samsung screenshots still need to be captured for the Play listing.
+
+**Free website address (once GitHub Pages is activated):** https://madbit1.github.io/linguafast-updates/ . Hosting is on GitHub Pages, not Vercel. The deployment workflow is [`deploy-website.yml`](.github/workflows/deploy-website.yml), deploying `docs/` on website changes; the owner must activate Pages once using repository administration. A first automated run failed with `Resource not accessible by integration` while attempting to create the Pages site; **do not claim the URL is live until a successful Pages deployment is verified**.
+
+From an existing authenticated GitHub CLI (e.g., the same Termux installation used to publish APKs), an owner may activate Pages for GitHub Actions and dispatch the website workflow:
+
+```sh
+gh api -X POST repos/madbit1/linguafast-updates/pages -f build_type=workflow --jq .html_url
+gh workflow run deploy-website.yml -R madbit1/linguafast-updates
+```
+
+If the first command reports an already-existing Pages site, use `gh api -X PUT repos/madbit1/linguafast-updates/pages -f build_type=workflow` instead. The GitHub Pages site can also be enabled at https://github.com/madbit1/linguafast-updates/settings/pages by selecting **GitHub Actions**.
+
+**Remaining for Google Play, independently of this website:** app-bundle publishing instead of only APK; target API 36+ (current source targets 35); removing the sideload self-install permission and self-update flow from the Play variant; accurate Data Safety declarations; a verified, private developer support/privacy contact; genuine screenshots; Play developer account and possible closed-test/identity requirements; investigation of the earlier Play Protect warning. Do not bypass device security.
+
+
 ## Official LinguaFast website — free GitHub Pages
 
 The public product website source is in [`docs/`](docs/), separate from the private app source and from signed APK release assets. Its planned HTTPS address is **https://madbit1.github.io/linguafast-updates/**, with a dedicated [privacy page](docs/privacy.html) and [support/data deletion page](docs/support.html). It shows the current v23 Android capabilities, explicitly labelled illustrative previews, and a read-only public GitHub release lookup.
