@@ -2,6 +2,14 @@
 
 **Last reviewed:** 19 November 2026. This document covers the public signed-APK channel, not a Google Play store listing.
 
+## 19 November 2026 — current release and review status
+
+**Public v20 is available:** https://github.com/madbit1/linguafast-updates/releases/tag/android-v20, APK SHA-256 `e9d3ecc85d4903e12e5f7ad21de36c94e8ab683ae565aa4d6abf308ba63e0318`, with owner-confirmed upload and downloaded-back checksum match. This is a **public GitHub sideload distribution**, not an independently cleared app-store release or malware-free certification.
+
+The private developer source now has an **unpublished v21** improvement: before its own Android installer handoff, the app checks downloaded APK bytes against the corresponding GitHub `.sha256` sidecar and blocks the handoff on error. **This fix is not included in the publicly released v20 APK.** Native compilation, Samsung behavior and Play Protect status for v21 remain untested.
+
+For the prior **“Harmful app blocked”** warning, the affected binary/version is not conclusively identified by the historical screenshot. Follow [Google's developer guidance](https://developers.google.com/android/play-protect/warning-dev-guidance) and, after proper review if classification appears erroneous, the [official appeal form](https://support.google.com/googleplay/android-developer/contact/protectappeals). The form requests the APK's VirusTotal SHA-256 and supporting details. No appeal or Google clearance is claimed. **Do not bypass Play Protect or Samsung security checks.**
+
 ## Current distribution and known issue
 
 A previous installation attempt on Samsung showed Google Play Protect **“Harmful app blocked”** and Samsung Auto Blocker **“Unknown app blocked.”** The exact Google classification reason and remediation are **not established**, so do not assume a false positive or say the app is security-cleared. No user should be instructed to disable Play Protect/Auto Blocker or choose an override to install a flagged APK.
