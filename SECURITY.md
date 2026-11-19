@@ -1,5 +1,10 @@
 # LinguaFast — security and safe installation
 
+## Current release (19 November 2026)
+
+The owner published [signed LinguaFast android-v21](https://github.com/madbit1/linguafast-updates/releases/tag/android-v21) with APK/checksum assets. The publisher downloaded the public APK back and verified SHA-256 `3e05073969d9f41218aa72ea0d34fdff54d382c6e9d4d0f9a53ceb14f9e34440`. The current v21 code also verifies a downloaded update against the matching GitHub `.sha256` file before Android installer handoff; **real on-device behavior has not been validated**. The prior Play Protect **“Harmful app blocked”** report is unresolved, not necessarily reproduced on v21. Signature and digest matching are integrity checks, **not proof that the APK is safe**. Never override Play Protect/Auto Blocker to install a flagged app.
+
+
 **Last reviewed:** 19 November 2026. This document covers the public signed-APK channel, not a Google Play store listing.
 
 ## 19 November 2026 — current release and review status
