@@ -1,5 +1,19 @@
 # LinguaFast — security and safe installation
 
+## Current state — 21 November 2026 (v34)
+
+**Published:** [android-v34](https://github.com/madbit1/linguafast-updates/releases/tag/android-v34), APK `LinguaFast_v34_Update.apk`, owner-confirmed SHA-256 `198565a6dae17750b07ab31374a97cbb1f47514e054486692ba7e5ae3bb7c2e2` from local signing/validation and GitHub download-back verification.
+
+In v34 Android 10+ the app has a new direct HTTPS update download intended to avoid stuck Download Manager jobs. Downloads are kept pending until the APK matches the published SHA-256 twice; the installer still independently checks the signing identity and requires approval. SDK <29 retains Download Manager. **The v34 in-app downloader has not yet been verified end-to-end on the affected Samsung device; do not describe the issue as conclusively fixed.**
+
+A prior Google Play Protect **“Harmful app blocked”** warning remains unresolved. Integrity checks are not malware certification. **Never disable or override Play Protect or Samsung Auto Blocker warnings.** Existing compatible upgrades should preserve data; do not uninstall to force an update. Do not publish signing keys, source code, personal conversation history or tokens to this repository.
+
+Official website: https://madbit1.github.io/linguafast/ — [privacy](https://madbit1.github.io/linguafast/privacy.html) · [support](https://madbit1.github.io/linguafast/support.html).
+
+---
+
+## Historical security review notes (older releases; superseded current-status statements below)
+
 ## Current release (19 November 2026)
 
 The owner published [signed LinguaFast android-v21](https://github.com/madbit1/linguafast-updates/releases/tag/android-v21) with APK/checksum assets. The publisher downloaded the public APK back and verified SHA-256 `3e05073969d9f41218aa72ea0d34fdff54d382c6e9d4d0f9a53ceb14f9e34440`. The current v21 code also verifies a downloaded update against the matching GitHub `.sha256` file before Android installer handoff; **real on-device behavior has not been validated**. The prior Play Protect **“Harmful app blocked”** report is unresolved, not necessarily reproduced on v21. Signature and digest matching are integrity checks, **not proof that the APK is safe**. Never override Play Protect/Auto Blocker to install a flagged app.
