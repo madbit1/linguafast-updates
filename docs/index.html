@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0d9488">
-<meta name="description" content="LinguaFast for Android: text translation, three-speaker conversations, voice playback and optional AI translation. Official product, privacy, support and release information.">
+<meta name="description" content="LinguaFast v1.34.0 for Android: aligned original and translation cards, three-speaker conversations, live speech-to-text, one-tap AI Polish and Undo, and secure signed updates.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="LinguaFast — Language, without the distance">
 <meta property="og:description" content="Translate text, communicate in three-speaker conversations and choose your own AI provider.">
 <title>LinguaFast — Language, without the distance</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="canonical" href="https://madbit1.github.io/linguafast-updates/">
+<link rel="canonical" href="https://madbit1.github.io/linguafast/">
 <link rel="stylesheet" href="style.css">
 <script src="site.js" defer></script>
 </head>
@@ -22,6 +22,7 @@
     <nav class="site-nav" aria-label="Main navigation">
       <a href="#features">Features</a>
       <a href="#conversation">Conversation</a>
+      <a href="#improvements">What’s new</a><a href="#learning">Learning</a>
       <a href="#ai">AI options</a>
       <a href="privacy.html">Privacy</a>
       <a href="support.html" class="nav-cta">Support &amp; help</a>
@@ -34,23 +35,23 @@
       <div>
         <div class="eyebrow">LinguaFast for Android</div>
         <h1>Language, without the distance<span style="color:var(--teal)">.</span></h1>
-        <p class="hero-lead">Translate a message, understand a conversation, and speak with more confidence. LinguaFast brings text, voice, and optional AI-powered translation together in one simple Android app.</p>
+        <p class="hero-lead">Translate a message, understand a conversation, and speak with more confidence. LinguaFast brings text, voice, and optional AI-powered translation together in one simple Android app. Save full original-and-translated messages in History or Saved, with clear controls to copy both and listen to either language.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#features">Explore the features <span aria-hidden="true">↗</span></a>
           <a class="button button-ghost" href="#release">Latest release</a>
         </div>
         <p class="little-note">An independent Android project developed by <strong>Stylish Future Technologies</strong>. Google Play submission is being prepared; the existing GitHub APK distribution is not a Play Store approval.</p>
-        <div class="hero-trust"><span>✓ Text and voice</span><span>✓ Three-speaker mode</span><span>✓ Your choice of AI provider</span></div>
+        <div class="hero-trust"><span>✓ Text and voice</span><span>✓ Three-speaker mode</span><span>✓ Your choice of AI provider</span><span>✓ Bilingual History &amp; Saved</span></div>
       </div>
       <div class="phone-wrap" aria-label="Illustrative preview of LinguaFast's Android text translation interface">
         <div class="phone">
           <div class="phone-top"><div class="phone-brand"><span class="mini-logo">L</span>LinguaFast</div><span>⚙ &nbsp; ☼</span></div>
           <div class="mode-row"><span>✦ <b>Text translation</b></span><span>♧ <b>Conversation</b></span></div>
           <div class="phone-panel language-row"><span>English</span><span class="switch">⇄</span><span>Tiếng Việt</span></div>
-          <div class="phone-panel"><div class="hint">Original message</div><div class="phone-content">It's lovely to meet you. How was your day?</div><div class="phone-actions"><span>🎤 Speak</span><span>✨ Polish</span><span>Copy</span></div></div>
+          <div class="phone-panel"><div class="hint">Original message</div><div class="phone-content">It's lovely to meet you. How was your day?</div><div class="phone-actions"><span>🎤 Dictate</span><span>✨ Polish</span><span>↶ Undo</span></div></div>
           <div class="phone-primary">Translate →</div>
-          <div class="phone-panel"><div class="hint">Vietnamese · translation</div><div class="phone-content">Rất vui được gặp bạn. Hôm nay của bạn thế nào?</div><div class="phone-actions"><span>🔊 Listen</span><span>Copy</span><span>Save</span></div></div>
-          <div class="phone-footer"><span>Instant / AI modes</span><span>History · Saved</span></div>
+          <div class="phone-panel"><div class="hint">Vietnamese · translation</div><div class="phone-content">Rất vui được gặp bạn. Hôm nay của bạn thế nào?</div><div class="phone-actions"><span>🔊 Play</span><span>Copy</span><span>⭐ Save</span><span>WhatsApp</span></div></div>
+          <div class="phone-footer"><span>Instant / AI modes</span><span>↶ Undo Polish · History &amp; Saved expand</span></div>
         </div>
         <div class="float-pill">🌐 Built for <b>real conversations</b></div>
         <div class="preview-label" style="text-align:center">Interface illustration based on the current app — not a device screenshot</div>
@@ -62,12 +63,51 @@
       <div class="section-heading"><div class="eyebrow">What LinguaFast does</div><h2>More ways to be understood.</h2><p>Practical tools for everyday travel, friendships, work, and conversations across languages.</p></div>
       <div class="grid3">
         <article class="feature"><div class="feature-icon" aria-hidden="true">🌐</div><h3>Text translation</h3><p>Translate typed messages with automatic source-language detection when available, or choose a language yourself.</p></article>
-        <article class="feature"><div class="feature-icon" aria-hidden="true">🎙</div><h3>Voice and playback</h3><p>Speak to enter text and listen to translations read aloud using the services installed on your Android device.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">🎙</div><h3>Voice and playback</h3><p>Speak using Android’s installed speech recognizer, then listen to translated text. Speech recognition is separate from AI model selection and depends on the language and device service.</p></article>
         <article class="feature"><div class="feature-icon" aria-hidden="true">👥</div><h3>Three-speaker conversations</h3><p>Give Speaker A, Speaker B, and Guest C their own language settings, voice controls, and conversation history.</p></article>
-        <article class="feature"><div class="feature-icon" aria-hidden="true">✨</div><h3>Optional AI Polish</h3><p>Ask your selected AI provider to suggest spelling and grammar improvements before you choose whether to apply them.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">✨</div><h3>Optional AI Polish</h3><p>One tap corrects the active text draft using your chosen AI provider; Undo restores the exact previous wording locally, without another AI request. Available in Translate and typed Conversation drafts.</p></article>
         <article class="feature"><div class="feature-icon" aria-hidden="true">🔐</div><h3>Encrypted provider keys</h3><p>Keep separate API credentials for each configured AI provider in local Android Keystore-backed encrypted storage.</p></article>
-        <article class="feature"><div class="feature-icon" aria-hidden="true">📚</div><h3>History and saved phrases</h3><p>Find previous translations, retain useful phrases, manage local history and make manual backups without exporting AI keys.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">📚</div><h3>Saved phrases for learning</h3><p>Open full original and translated text together in History and Saved, copy both languages, or play each aloud. A dedicated learning system is still in development.</p></article>
       </div>
+    </div>
+  </section>
+  <section class="section" id="improvements">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Recent app improvements</div>
+        <h2>Clearer translation. Clearer updates.</h2>
+        <p>What changed in the latest published Android builds.</p>
+      </div>
+      <div class="grid3">
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true">📥</div>
+          <h3>Updates you can follow</h3>
+          <p>The v34 updater streams the GitHub APK over HTTPS on modern Android to avoid downloads stuck on Waiting. It reports bytes received, supports cancellation and verifies the published SHA-256 twice before Android asks for installation approval. This new download method still needs an end-to-end device test.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true">🗣</div>
+          <h3>Cleaner v34 layout</h3>
+          <p>Original and translated text appear in aligned, clearly outlined boxes. AI provider settings and the reusable phrases, History and Saved library expand when needed, reducing vertical scrolling without removing features.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true">⚙️</div>
+          <h3>Provider selection</h3>
+          <p>Choose Instant or AI, open the compact AI channel selector to change providers, or manage saved profiles in Settings. Remembered keys use Android Keystore-backed encryption.</p>
+        </article>
+      </div>
+      <p class="fine">Speech recognition is provided by Android, not Gemini or the selected AI translation model. See <a href="support.html#speech">speech-recognition troubleshooting</a> if transcription is unclear.</p>
+    </div>
+  </section>
+  <section class="section alt" id="learning">
+    <div class="container showcase">
+      <div>
+        <div class="eyebrow">Learn from everyday conversations</div>
+        <h2>Save it. Review it. Remember it.</h2>
+        <p>LinguaFast is expanding from a translation tool into a practical language-learning companion. Save phrases you find useful, revisit the original text and translation, and deliberately choose when to reuse a phrase in the translator.</p>
+        <p><strong>Your study library stays separate from live conversation history.</strong> Opening a saved phrase for review should not change who is speaking or send a message to anyone.</p>
+        <p class="fine">Translation accuracy can vary. Saved translations are study references, not verified lessons; important wording should be checked with a fluent speaker. The separate learning interface is in development and may not yet be available in the published APK.</p>
+      </div>
+      <div class="feature"><div class="feature-icon" aria-hidden="true">📚</div><h3>Two clear spaces</h3><p><strong>Conversation:</strong> translate the discussion happening now.</p><p><strong>Learning library:</strong> revisit past phrases at your own pace, with an explicit action to reuse a saved phrase in the translator.</p><p>History and saved phrases remain locally controlled.</p></div>
     </div>
   </section>
   <section class="section" id="conversation">
@@ -85,7 +125,7 @@
       <div>
         <div class="eyebrow">Conversation mode</div><h2>One conversation.<br>Three voices.</h2>
         <p>LinguaFast's conversation view isn't limited to two people. Each speaker can use a chosen language, with a dedicated microphone and a shared transcript.</p>
-        <p>Automatic recognition and transcription depend on the Android speech service. If a short phrase is misunderstood, select the language manually or type it instead.</p>
+        <p>Android’s speech-recognition service converts microphone audio into text before the translation provider receives it. If transcription is garbled, choose the speaker’s actual language instead of Auto, speak away from background noise, and review the recognized text. Changing Gemini or another translation model does not change the Android recognizer.</p>
         <a class="button button-ghost" href="support.html">Learn how it works</a>
       </div>
     </div>
@@ -94,7 +134,7 @@
     <div class="container showcase">
       <div>
         <div class="eyebrow">Your AI, your choice</div><h2>Switch providers. Keep your keys.</h2>
-        <p>Version 1.23 introduced independent saved profiles for every supported AI provider. Switch back without typing your previous API key again; models and endpoint settings are remembered too.</p>
+        <p>The Android app has an expandable main-screen AI-provider selector and distinct editable provider profiles. Keys, models and endpoint settings are remembered separately when you choose local storage. The Settings dialog stays open after saving so you can configure another provider.</p>
         <div class="provider-list" aria-label="Current supported provider presets">
           <span>Gemini</span><span>Groq</span><span>OpenRouter</span><span>OpenAI</span><span>DeepSeek</span><span>Custom</span>
         </div>
@@ -123,11 +163,11 @@
       <div class="section-heading"><div class="eyebrow">Version and updates</div><h2>Follow the current release.</h2><p>Our release information comes from the official public LinguaFast GitHub channel. New versions are published there separately from Google Play.</p></div>
       <div class="two-column">
         <div class="feature" style="min-height:0">
-          <div class="release-date" id="release-state">Latest confirmed public release · 19 November 2026</div>
-          <div class="version-big" id="release-version">v1.23.0</div>
-          <p id="release-copy">Separate locally encrypted API key profiles for Gemini, Groq, OpenRouter, OpenAI, DeepSeek and custom providers.</p>
+          <div class="release-date" id="release-state">Published Android release · 21 November 2026</div>
+          <div class="version-big" id="release-version">v1.34.0</div>
+          <p id="release-copy">v34 brings a more compact Translate layout, one-tap Polish with Undo and an updated Android download process. The updater still requires real-device verification.</p>
           <div class="hero-actions">
-            <a class="button button-primary" id="release-link" href="https://github.com/madbit1/linguafast-updates/releases/latest" rel="noopener">View official release ↗</a>
+            <a class="button button-primary" id="release-link" href="https://github.com/madbit1/linguafast-updates/releases/tag/android-v34" rel="noopener">View official release ↗</a>
             <a class="button button-ghost" href="https://github.com/madbit1/linguafast-updates/releases" rel="noopener">All releases</a>
           </div>
           <p class="fine">GitHub sideload releases are not the Google Play Store. If your device identifies an APK as harmful, do not bypass its security warning.</p>
@@ -149,7 +189,7 @@
   <div class="container">
     <div class="footer-grid">
       <div><a class="identity" style="color:white" href="./"><img src="favicon.svg" width="42" height="42" alt="">LinguaFast</a><p style="max-width:340px;margin-top:16px">Practical text, voice and conversation translation for Android.</p><p>Developed by Stylish Future Technologies.</p></div>
-      <div><h3>Product</h3><ul><li><a href="#features">Features</a></li><li><a href="#conversation">Conversation mode</a></li><li><a href="#ai">AI providers</a></li><li><a href="#release">Latest version</a></li></ul></div>
+      <div><h3>Product</h3><ul><li><a href="#features">Features</a></li><li><a href="#conversation">Conversation mode</a></li><li><a href="#learning">Learning library</a></li><li><a href="#ai">AI providers</a></li><li><a href="#release">Latest version</a></li></ul></div>
       <div><h3>Information</h3><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="support.html">Help and contact</a></li><li><a href="https://github.com/madbit1/linguafast-updates/blob/main/SECURITY.md">Security notice</a></li><li><a href="https://github.com/madbit1/linguafast-updates/releases/latest">GitHub releases</a></li></ul></div>
     </div>
     <div class="footer-bottom">© 2026 LinguaFast · Developed by Stylish Future Technologies · Independent software project · Not affiliated with Google, Samsung or AI providers.</div>
