@@ -1,5 +1,28 @@
-# LinguaFast — public signed Android APK releases
+# LinguaFast — public signed Android releases
 
+## Current published release — 21 November 2026
+
+**Latest owner-confirmed release:** [LinguaFast v1.34.0 / build 34](https://github.com/madbit1/linguafast-updates/releases/tag/android-v34). The signed `LinguaFast_v34_Update.apk` was validated locally in Termux, uploaded and downloaded back from GitHub, then SHA-256 checked against `198565a6dae17750b07ab31374a97cbb1f47514e054486692ba7e5ae3bb7c2e2`. **Publication/integrity are verified; installation and the redesigned Android v34 updater on the owner's Samsung have not yet been confirmed.** Prior releases including v33 remain available.
+
+**Official public product website:** https://madbit1.github.io/linguafast/ (source repository `madbit1/linguafast`). The `docs/` directory here contains a synchronized **legacy copy**. Refer to the canonical site for current features, [privacy](https://madbit1.github.io/linguafast/privacy.html) and [support](https://madbit1.github.io/linguafast/support.html).
+
+### What's new in v33–v34
+
+- Matching outlined original and translation panels, with a smaller main-screen footprint
+- Optional one-tap AI Polish for the active Translate or typed Conversation draft; local Undo restores the exact original text without additional provider calls
+- A/B/C microphones, individual chat message copy/replay/delete and WhatsApp sharing preserved; chat transcript has a clearer outer border
+- Expandable AI channel, reusable phrases, History and Saved controls to reduce scrolling
+- Android 10+ secure direct APK download replaces stalled Android DownloadManager waiting states, with actual received bytes, cancellation, HTTPS host restrictions, two checks against the published SHA-256 sidecar, and normal installer approval. Android <10 retains DownloadManager. **The new in-app path requires a future-release on-device confirmation.**
+
+### Security and separation
+
+This repository contains **public signed APKs and non-sensitive release notes only**, never the private Android source, credentials, keystores, history, or recordings. The native Android package ID is `com.linguafast.translatox` and its original signing certificate must remain unchanged. Never uninstall or clear storage just to install an update. Do not bypass Google Play Protect/Samsung Auto Blocker warnings: a valid signature and matching checksum prove file identity, not that a package is malware-free or Google Play approved.
+
+For developer release steps and older historical information, consult the archived detailed notes below. Those older entries describe previous releases and are not the current status.
+
+---
+
+## Historical release preparation notes (superseded by v34 status above)
 
 ## LinguaFast website and Google Play preparation
 
