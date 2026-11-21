@@ -1,26 +1,26 @@
-# LinguaFast website — public static files
+# Legacy copy of LinguaFast website
 
-This folder is the **only** source for the public LinguaFast landing site (separate from the private Android app source). It uses the real Android app's brand colour (`#0d9488`), documented v23 features, and verified v23 public release; private source, signing keys, user data and API keys are **never published here**.
+This folder is a synchronized mirror of the canonical public product website at https://madbit1.github.io/linguafast/ (repository `madbit1/linguafast`). The repository `madbit1/linguafast-updates` serves signed APK assets, release metadata and security/privacy notices. For the most up-to-date product and support descriptions, use the canonical site.
 
-## Live address and activation
+# LinguaFast — official product website
 
-Preferred free GitHub Pages URL (once enabled): **https://madbit1.github.io/linguafast-updates/**
+**Canonical public site:** https://madbit1.github.io/linguafast/  
+**Source:** this public repository, `madbit1/linguafast`, branch `main`. The Android application source and signing keys are maintained separately and privately.
 
-The repository administrator can configure Pages to publish from **main /docs** using [Settings → Pages](https://github.com/madbit1/linguafast-updates/settings/pages), or run `bash scripts/enable_pages_termux.sh` from a local checkout of **this public repository** with an authenticated GitHub CLI. Note: the private Termux checkout `~/linguafast-src` is a *different* Git repository.
+**Latest documented published Android APK:** v1.34.0 / build 34, release [android-v34](https://github.com/madbit1/linguafast-updates/releases/tag/android-v34), SHA-256 `198565a6dae17750b07ab31374a97cbb1f47514e054486692ba7e5ae3bb7c2e2`. This SHA was confirmed by the owner's Termux local validation and GitHub download-back verification on 21 November 2026. The actual Samsung in-app v34 updater still requires a future-release end-to-end test.
 
-Web pages:
-- `index.html`: product landing page, current features, illustrative interface panels and latest-release metadata
-- `privacy.html`: current v23 Android privacy and data-deletion notice
-- `support.html`: AI provider help, voice assistance, deletion process and Play submission status
-- `site.js`: unauthenticated read-only GitHub release metadata lookup (fallback is owner-verified v23). No API secrets or analytics
-- `favicon.svg`, `style.css`, `sitemap.xml`, `robots.txt`: shared styling/metadata
+## Pages and maintenance
 
-## Publishing and app-store review
+- `index.html`: accessible feature overview, **illustrative** UI showing original above translated text, one-tap Polish/Undo, A/B/C conversation and release information
+- `support.html`: user help for dictation, Polish, layout, update failures and local data
+- `privacy.html`: privacy notice aligned with v34 flows (manual AI requests, direct APK download and local storage)
+- `site.js`: read-only latest published release lookup, v34 static fallback, no analytics or keys
+- `style.css`, `favicon.svg`, `robots.txt`, `sitemap.xml`: styling and metadata
 
-Changes in `/docs` should be reviewed before publishing because this site contains legal/privacy claims. The current app's public privacy notice at `../PRIVACY_POLICY.md` also requires review and synchronisation when data flows change.
+The public repository `madbit1/linguafast-updates` contains a **legacy duplicate website** in its `docs/` directory. Keep it synchronized or direct readers to this canonical site; do not publish contradictory release/privacy notices. The update repository is binary-only for releases; never upload private Android app source, secrets, signing material or personal data.
 
-**Image authenticity:** Neither the public release repository nor the private source repository currently contains real Android screenshots, photographs, or store-banner files. The phone and conversation panels on the landing page are clearly labelled *illustrations*. Only replace them with genuinely captured and reviewed screenshots from the actual current LinguaFast Android version. Google Play submission requires authentic device screenshots.
+## Accuracy and safety
 
-**Still required before Play listing:** a verified non-public developer/support/privacy contact, policy review, real screenshots, Play App Bundle targeting Android API 36+, Play-distribution build without GitHub sideload self-update, and any applicable account testing/identity checks. Existing GitHub APK releases are not Play Store certification.
+Website phone and chat examples are **illustrations, not screenshots** or proof of translation correctness. The v34 direct-download implementation is a released code change, **not yet a confirmed on-device updater repair**. The user still approves Android installation. Play Protect and Samsung Auto Blocker must not be bypassed. GitHub releases are not Google Play approval.
 
-**Cost:** GitHub Pages is free for the public repository. GitHub documents a recommended 1 GB source size and soft 100 GB monthly site-bandwidth limit. Website availability is only confirmed after GitHub Pages is enabled and the final URL responds.
+Outstanding before Play distribution: genuine device screenshots, verified private developer and privacy contact, legal review, platform policy and data-safety review, and an approved Play build/AAB. Pricing for optional AI depends on the user's selected provider; speech accuracy depends on installed Android speech services.
