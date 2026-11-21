@@ -13,7 +13,7 @@
       const found = /^android-v([1-9][0-9]*)$/.exec(String(release && release.tag_name || ""));
       if (!found || !Array.isArray(release.assets)) return;
       const n = Number(found[1]);
-      if (n < 34) return;
+      if (n < 36) return;
       const expected = "LinguaFast_v" + n + "_Update.apk";
       if (!release.assets.some(a => a && a.name === expected && a.size > 0)) return;
       version.textContent = "v1." + n + ".0";
@@ -30,11 +30,13 @@
         31: "Verified APKs stored in a dedicated LinguaFast Downloads folder.",
         32: "Cleaner Translate and Conversation switching and larger live chat area.",
         33: "One-tap AI Polish and Undo for Translate and typed Conversation drafts, plus a clearer chat boundary.",
-        34: "Aligned translation cards, expandable history and provider controls, and a redesigned secure APK downloader (device verification ongoing)."
+        34: "Aligned translation cards, expandable history and provider controls, and a redesigned secure APK downloader.",
+        35: "In-app updater resumes after installation-source permission; borderless Translate icons and accessible History/Saved.",
+        36: "Thumb-sized borderless icons in one row, readable and tappable bilingual History/Saved cards; updater confirmed working on Samsung."
       };
       description.textContent = summaries[n] ||
         "A newer signed LinguaFast APK is available. Check the official release notes for the full list of changes.";
       link.href = "https://github.com/madbit1/linguafast-updates/releases/tag/android-v" + n;
     })
-    .catch(() => { /* Keep published v34 fallback without interrupting the page. */ });
+    .catch(() => { /* Keep published v36 fallback without interrupting the page. */ });
 })();
