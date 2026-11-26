@@ -13,7 +13,7 @@
       const found = /^android-v([1-9][0-9]*)$/.exec(String(release && release.tag_name || ""));
       if (!found || !Array.isArray(release.assets)) return;
       const n = Number(found[1]);
-      if (n < 41) return;
+      if (n < 42) return;
       const expected = "LinguaFast_v" + n + "_Update.apk";
       if (!release.assets.some(a => a && a.name === expected && a.size > 0)) return;
       version.textContent = "v1." + n + ".0";
@@ -47,5 +47,5 @@
       if (setupNote && n >= 42) setupNote.textContent =
         "The signed v42 update includes Quick Setup on fresh Android installations, and it stays accessible from Help. It will not reset existing saved language choices, history or encrypted AI settings.";
     })
-    .catch(() => { /* Keep independently verified v41 fallback without interrupting the page. */ });
+    .catch(() => { /* Keep independently verified v42 fallback without interrupting the page. */ });
 })();
