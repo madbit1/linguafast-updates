@@ -13,7 +13,7 @@
       const found = /^android-v([1-9][0-9]*)$/.exec(String(release && release.tag_name || ""));
       if (!found || !Array.isArray(release.assets)) return;
       const n = Number(found[1]);
-      if (n < 36) return;
+      if (n < 41) return;
       const expected = "LinguaFast_v" + n + "_Update.apk";
       if (!release.assets.some(a => a && a.name === expected && a.size > 0)) return;
       version.textContent = "v1." + n + ".0";
@@ -32,11 +32,20 @@
         33: "One-tap AI Polish and Undo for Translate and typed Conversation drafts, plus a clearer chat boundary.",
         34: "Aligned translation cards, expandable history and provider controls, and a redesigned secure APK downloader.",
         35: "In-app updater resumes after installation-source permission; borderless Translate icons and accessible History/Saved.",
-        36: "Thumb-sized borderless icons in one row, readable and tappable bilingual History/Saved cards; updater confirmed working on Samsung."
+        36: "Thumb-sized borderless icons in one row, readable and tappable bilingual History/Saved cards; updater confirmed working on Samsung.",
+        37: "Longer AI translations, opt-in provider failover and WhatsApp Smart Split, with cross-language tone safeguards.",
+        38: "Animated AI Polish status stays inside the small toolbar icon.",
+        39: "Clearer FROM/TO language boxes, compact icons and automatic source-language preview.",
+        40: "Conversation language choices and 12-language phone-localized main interface labels.",
+        41: "Speaker A, B and Guest C microphones are kept above the scrolling conversation on smaller screens.",
+        42: "New-user Quick Setup for text and conversation languages with optional secure AI-key setup; Guest C Auto-detect label is shorter."
       };
       description.textContent = summaries[n] ||
         "A newer signed LinguaFast APK is available. Check the official release notes for the full list of changes.";
       link.href = "https://github.com/madbit1/linguafast-updates/releases/tag/android-v" + n;
+      const setupNote = document.getElementById("quick-setup-availability");
+      if (setupNote && n >= 42) setupNote.textContent =
+        "The signed v42 update includes Quick Setup on fresh Android installations, and it stays accessible from Help. It will not reset existing saved language choices, history or encrypted AI settings.";
     })
-    .catch(() => { /* Keep published v36 fallback without interrupting the page. */ });
+    .catch(() => { /* Keep independently verified v41 fallback without interrupting the page. */ });
 })();
