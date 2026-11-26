@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0d9488">
-<meta name="description" content="LinguaFast v1.36.0 for Android: aligned original and translation cards, three-speaker conversations, live speech-to-text, one-tap AI Polish and Undo, and secure signed updates.">
+<meta name="description" content="LinguaFast for Android: clear language selectors, three-speaker conversations, system-language interface labels, secure signed updates and optional guided setup.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="LinguaFast — Language, without the distance">
 <meta property="og:description" content="Translate text, communicate in three-speaker conversations and choose your own AI provider.">
@@ -20,7 +20,7 @@
   <div class="container head-inner">
     <a class="identity" href="./"><img src="favicon.svg" width="42" height="42" alt="">LinguaFast</a>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="#features">Features</a>
+      <a href="#features">Features</a><a href="#getting-started">Get started</a>
       <a href="#conversation">Conversation</a>
       <a href="#improvements">What’s new</a><a href="#learning">Learning</a>
       <a href="#ai">AI options</a>
@@ -35,7 +35,7 @@
       <div>
         <div class="eyebrow">LinguaFast for Android</div>
         <h1>Language, without the distance<span style="color:var(--teal)">.</span></h1>
-        <p class="hero-lead">Translate a message, understand a conversation, and speak with more confidence. LinguaFast brings text, voice, and optional AI-powered translation together in one simple Android app. Save full original-and-translated messages in History or Saved, with clear controls to copy both and listen to either language.</p>
+        <p class="hero-lead">Translate a message, understand a conversation, and speak with more confidence. LinguaFast brings text, voice, and optional AI-powered translation together in one simple Android app. Save full original-and-translated messages in History or Saved, with clear controls to copy both and listen to either language. Choose your languages clearly and use free Instant translation without an AI key.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#features">Explore the features <span aria-hidden="true">↗</span></a>
           <a class="button button-ghost" href="#release">Latest release</a>
@@ -43,9 +43,9 @@
         <p class="little-note">An independent Android project developed by <strong>Stylish Future Technologies</strong>. Google Play submission is being prepared; the existing GitHub APK distribution is not a Play Store approval.</p>
         <div class="hero-trust"><span>✓ Text and voice</span><span>✓ Three-speaker mode</span><span>✓ Your choice of AI provider</span><span>✓ Bilingual History &amp; Saved</span></div>
       </div>
-      <figure class="phone-wrap current-device-preview" aria-label="Visual illustration of the current LinguaFast v36 Android Translate interface">
+      <figure class="phone-wrap current-device-preview" aria-label="Historical v36 illustration of the LinguaFast Android Translate interface">
         <img src="images/linguafast-v36-translate.svg" width="390" height="870" loading="eager" decoding="async" alt="LinguaFast v36 showing English to Vietnamese translation, large borderless icons on one row and full History and Saved tabs. Demonstration text only." style="width:min(390px,100%);height:auto;display:block;margin:0 auto;border-radius:27px;box-shadow:0 20px 56px rgba(13,40,50,.17)">
-        <figcaption class="preview-label" style="text-align:center">Updated v36 layout illustration · Demonstration text, not a real device screenshot</figcaption>
+        <figcaption class="preview-label" style="text-align:center">Historical v36 demonstration illustration · The published app has moved on to v41; not a real device screenshot</figcaption>
       </figure>
     </div>
   </section>
@@ -55,11 +55,39 @@
       <div class="grid3">
         <article class="feature"><div class="feature-icon" aria-hidden="true">🌐</div><h3>Text translation</h3><p>Translate typed messages with automatic source-language detection when available, or choose a language yourself.</p></article>
         <article class="feature"><div class="feature-icon" aria-hidden="true">🎙</div><h3>Voice and playback</h3><p>Speak using Android’s installed speech recognizer, then listen to translated text. Speech recognition is separate from AI model selection and depends on the language and device service.</p></article>
-        <article class="feature"><div class="feature-icon" aria-hidden="true">👥</div><h3>Three-speaker conversations</h3><p>Give Speaker A, Speaker B, and Guest C their own language settings, voice controls, and conversation history.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">👥</div><h3>Three-speaker conversations</h3><p>Give Speaker A, Speaker B and Guest C their own language settings and microphone buttons. Since v41 all three buttons sit above the scrolling message area on narrow phones.</p></article>
         <article class="feature"><div class="feature-icon" aria-hidden="true">✨</div><h3>Optional AI Polish</h3><p>One tap corrects the active text draft using your chosen AI provider; Undo restores the exact previous wording locally, without another AI request. Available in Translate and typed Conversation drafts.</p></article>
         <article class="feature"><div class="feature-icon" aria-hidden="true">🔐</div><h3>Encrypted provider keys</h3><p>Keep separate API credentials for each configured AI provider in local Android Keystore-backed encrypted storage.</p></article>
         <article class="feature"><div class="feature-icon" aria-hidden="true">📚</div><h3>Saved phrases for learning</h3><p>Open full original and translated text together in History and Saved, copy both languages, or play each aloud. A dedicated learning system is still in development.</p></article>
       </div>
+    </div>
+  </section>
+  <section class="section" id="getting-started">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Simple first-time setup</div>
+        <h2>Choose languages. Start talking.</h2>
+        <p>No account is required to begin using Instant translation. The next signed app update adds an optional in-app Quick Setup to guide these same choices.</p>
+      </div>
+      <div class="grid3">
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true">🌍</div>
+          <h3>1. Choose FROM and TO</h3>
+          <p>Select a source and destination language in Translate. Leave FROM on Auto-detect to let the app identify typed text where supported. Your manual choices are preserved.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true">🎤</div>
+          <h3>2. Set up Conversation</h3>
+          <p>Choose Speaker A, Speaker B and optional Guest C languages. Tap each speaker's coloured microphone and grant Android microphone permission when asked.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true">⚡</div>
+          <h3>3. Use Instant, or add AI</h3>
+          <p>Instant translation needs no API key. For optional AI, select a provider in Settings, paste its key, tap Test key, then Save. Provider fees or limits may apply.</p>
+        </article>
+      </div>
+      <p class="fine" id="quick-setup-availability">An improved in-app Quick Setup is in source preparation, not yet a published Android update. Once published, it will open on fresh installs and remain available from Help; existing saved settings will not be reset.</p>
+      <p class="fine">In app builds v40 and later, selected main labels follow the Android phone language for 12 supported interface languages. Some advanced settings and help text still use English. Translation-language selections do not change when the phone language changes. <a href="support.html#quick-start">Read the setup guide</a>.</p>
     </div>
   </section>
   <section class="section" id="improvements">
@@ -77,13 +105,13 @@
         </article>
         <article class="feature">
           <div class="feature-icon" aria-hidden="true">🗣</div>
-          <h3>Simpler v36 controls</h3>
-          <p>The existing LinguaFast design keeps teal-outlined original and translation cards. Large, borderless icons sit in single rows with comfortable tap targets, while History and Saved show readable bilingual records that can be opened by tapping.</p>
+          <h3>Clearer languages and compact actions</h3>
+          <p>Since v39 the FROM/TO selectors stand out and the input/output action icons fit in compact rows. History and Saved retain readable bilingual records. v38 replaced oversized “Checking…” text with a small animated AI Polish indicator.</p>
         </article>
         <article class="feature">
           <div class="feature-icon" aria-hidden="true">⚙️</div>
-          <h3>Provider selection</h3>
-          <p>Choose Instant or AI, open the compact AI channel selector to change providers, or manage saved profiles in Settings. Remembered keys use Android Keystore-backed encryption.</p>
+          <h3>Device-language labels and provider choice</h3>
+          <p>The v40 app uses 12 phone-language options for its main interface labels and keeps user-chosen translation languages unchanged. Choose Instant or AI and manage separate encrypted provider keys in Settings.</p>
         </article>
       </div>
       <p class="fine">Speech recognition is provided by Android, not Gemini or the selected AI translation model. See <a href="support.html#speech">speech-recognition troubleshooting</a> if transcription is unclear.</p>
@@ -154,11 +182,11 @@
       <div class="section-heading"><div class="eyebrow">Version and updates</div><h2>Follow the current release.</h2><p>Our release information comes from the official public LinguaFast GitHub channel. New versions are published there separately from Google Play.</p></div>
       <div class="two-column">
         <div class="feature" style="min-height:0">
-          <div class="release-date" id="release-state">Published Android release · 21 November 2026</div>
-          <div class="version-big" id="release-version">v1.36.0</div>
-          <p id="release-copy">v36 makes History and Saved records readable and tappable and keeps Translate actions in a single row of large, borderless icons. The in-app update flow has been confirmed on a Samsung phone.</p>
+          <div class="release-date" id="release-state">Published Android release · 25 November 2026</div>
+          <div class="version-big" id="release-version">v1.41.0</div>
+          <p id="release-copy">v41 moves Speaker A, Speaker B and Guest C microphones above the scrolling chat on narrow phones. Earlier releases added clearer language choices, optional phone-language interface labels and compact AI Polish progress.</p>
           <div class="hero-actions">
-            <a class="button button-primary" id="release-link" href="https://github.com/madbit1/linguafast-updates/releases/tag/android-v36" rel="noopener">View official release ↗</a>
+            <a class="button button-primary" id="release-link" href="https://github.com/madbit1/linguafast-updates/releases/tag/android-v41" rel="noopener">View official release ↗</a>
             <a class="button button-ghost" href="https://github.com/madbit1/linguafast-updates/releases" rel="noopener">All releases</a>
           </div>
           <p class="fine">GitHub sideload releases are not the Google Play Store. If your device identifies an APK as harmful, do not bypass its security warning.</p>
